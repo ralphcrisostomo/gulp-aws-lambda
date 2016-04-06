@@ -1,0 +1,51 @@
+{
+  "name": "gulp-starter-kit",
+  "version": "1.0.0",
+  "description": "A starter kit for creating a Gulp plugin",
+  "main": "dist/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "homepage": "https://github.com/ralphcrisostomo/gulp-starter-kit",
+  "author": {
+    "name": "Ralph Crisostomo",
+    "email": "rrecrisostomo@gmail.com",
+    "url": "http://ralphcrisostomo.net/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ralphcrisostomo/gulp-starter-kit.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ralphcrisostomo/grunt-starter-kit/issues"
+  },
+  "engines": {
+    "node": ">= 0.8.0"
+  },
+  "keywords": [
+    "gulp",
+    "javascript",
+    "plugin",
+    "starter-kit"
+  ],
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "coffee-script": "^1.10.0",
+    "gulp": "^3.9.1",
+    "gulp-bump": "0.3.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-coffee": "^2.3.2",
+    "gulp-coffeelint": "^0.6.0",
+    "gulp-conventional-changelog": "0.4.0",
+    "gulp-mocha": "^2.2.0",
+    "gulp-uglify": "^1.5.3",
+    "inquirer": "0.8.5",
+    "require-dir": "^0.3.0",
+    "run-sequence": "^1.1.5"
+  },
+  "dependencies": {
+    "lodash": "^4.8.2",
+    "through2": "^2.0.1"
+  }
+}
