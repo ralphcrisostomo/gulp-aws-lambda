@@ -1,0 +1,1 @@
+"use strict";var through2;through2=require("through2"),module.exports=function(r,u){return through2.obj(function(r,u,t){return t(null,r)})};
