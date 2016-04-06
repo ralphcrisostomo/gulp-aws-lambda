@@ -1,12 +1,12 @@
 {
-  "name": "gulp-starter-kit",
+  "name": "gulp-aws-lambda",
   "version": "1.0.1",
   "description": "A starter kit for creating a Gulp plugin",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "homepage": "https://github.com/ralphcrisostomo/gulp-starter-kit",
+  "homepage": "https://github.com/ralphcrisostomo/gulp-aws-lambda",
   "author": {
     "name": "Ralph Crisostomo",
     "email": "rrecrisostomo@gmail.com",
@@ -14,10 +14,10 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/ralphcrisostomo/gulp-starter-kit.git"
+    "url": "git://github.com/ralphcrisostomo/gulp-aws-lambda.git"
   },
   "bugs": {
-    "url": "https://github.com/ralphcrisostomo/grunt-starter-kit/issues"
+    "url": "https://github.com/ralphcrisostomo/gulp-aws-lambda/issues"
   },
   "engines": {
     "node": ">= 0.8.0"
@@ -26,7 +26,8 @@
     "gulp",
     "javascript",
     "plugin",
-    "starter-kit"
+    "aws",
+    "lambda"
   ],
   "license": "ISC",
   "devDependencies": {
