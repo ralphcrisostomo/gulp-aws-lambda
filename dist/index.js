@@ -1,1 +1,1 @@
-"use strict";var through2;through2=require("through2"),module.exports=function(o,r){return console.log(o),through2.obj(function(o,r,u){return console.log("xx"),u(null,o)})};
+"use strict";var through2;through2=require("through2"),module.exports=function(r,u){return through2.obj(function(r,u,t){return t(null,r)})};

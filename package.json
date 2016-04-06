@@ -1,6 +1,6 @@
 {
   "name": "gulp-starter-kit",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A starter kit for creating a Gulp plugin",
   "main": "dist/index.js",
   "scripts": {
