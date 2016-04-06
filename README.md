@@ -17,9 +17,9 @@ var lambda_params = {
     Role            : 'arn:aws:iam:xxxxxx',
     Runtime         : 'nodejs',
     Description     : 'Assign a meaningful description as you see fit',
-    MemorySize      : '128',
-    Publish         : 'true',
-    Timeout         : '10',
+    MemorySize      : 128,
+    Timeout         : 10,
+    Publish         : true,
     Code            : {
         S3Bucket    : 'my_s3_bucket',
         S3Key       : 'archive.zip'
