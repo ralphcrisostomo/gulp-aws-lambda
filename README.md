@@ -1,19 +1,19 @@
 # gulp-aws-lambda
 By Ralph Crisostomo - 2016/04/05
 
-#### Description
+## Description
 A Gulp plugin for AWS Lambda deployment.
 
-#### Install
+## Install
 ```bash
 npm install --save-dev gulp-aws-lambda
 ```
 
-#### Sample Lambda Params
+## Sample Lambda Params
 ```javascript
 var lambda_params = {
     FunctionName    : 'MyFunctionName',
-    Handler         : 'index.handler',              
+    Handler         : 'index.handler',
     Role            : 'arn:aws:iam:xxxxxx',
     Runtime         : 'nodejs',
     Description     : 'Assign a meaningful description as you see fit',
@@ -27,7 +27,8 @@ var lambda_params = {
 }
 ```
 
-#### Basic Usage
+## Basic Usage
+If `FunctionName` do not exist in AWS console, it will create a new one for you.
 ```javascript
 
 var gulp            = require('gulp');
@@ -49,14 +50,15 @@ gulp.task('deploy',function(){
 ```
 
 
-#### Basic usage with S3 upload
+## Basic usage with S3 upload
+If `FunctionName` do not exist in AWS console, it will create a new one for you.
 ```javascript
 
 var gulp            = require('gulp');
 var zip             = require('gulp-zip')
 var aws_lambda      = require("gulp-aws-lambda");
 
-var lambda_params   = { 
+var lambda_params   = {
     FunctionName    : 'MyFunctionName',
     Code            : {
         S3Bucket    : 'my_s3_bucket',
@@ -64,7 +66,7 @@ var lambda_params   = {
     }
 };
 
-var aws_credentials = {
+var aws_credentials   = {
     accessKeyId       : '',
     secretAccessKey   : '',
     region            : '',
