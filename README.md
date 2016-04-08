@@ -32,7 +32,7 @@ If `FunctionName` do not exist in AWS Lambda console, it will create a new one f
 ```javascript
 
 var gulp              = require('gulp');
-var zip               = require('gulp-zip')
+var zip               = require('gulp-zip');
 var aws_lambda        = require("gulp-aws-lambda");
 
 var lambda_params     = { FunctionName : 'MyFunctionName' };
@@ -43,7 +43,7 @@ var aws_credentials   = {
 };
 
 gulp.task('deploy',function(){
-    gulp.src(['dist/*'])
+    gulp.src(['dist/index.js'])
     .pipe(zip('archive.zip'))
     .pipe(aws_lambda(aws_credentials, lambda_params))
 });
@@ -55,7 +55,8 @@ If `FunctionName` do not exist in AWS Lambda console, it will create a new one f
 ```javascript
 
 var gulp              = require('gulp');
-var zip               = require('gulp-zip')
+var install           = require('gulp-install);
+var zip               = require('gulp-zip');
 var aws_lambda        = require("gulp-aws-lambda");
 
 var lambda_params     = {
@@ -72,8 +73,14 @@ var aws_credentials   = {
     region            : '',
 };
 
-gulp.task('deploy',function(){
-    gulp.src(['dist/*'])
+gulp.task('install_dependencies',function(){
+    gulp.src('./package.json')
+    .pipe(gulp.dest('./dist'))
+    .pipe(install({production : true}))
+});
+
+gulp.task('deploy',['install_dependencies'], function(){
+    gulp.src(['dist/**/*'])
     .pipe(zip('archive.zip'))
     .pipe(aws_lambda(aws_credentials, lambda_params))
 });
