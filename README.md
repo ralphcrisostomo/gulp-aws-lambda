@@ -33,7 +33,7 @@ If `FunctionName` do not exist in AWS Lambda console, it will create a new one f
 
 var gulp              = require('gulp');
 var zip               = require('gulp-zip');
-var aws_lambda        = require("gulp-aws-lambda");
+var aws_lambda        = require('gulp-aws-lambda');
 
 var lambda_params     = { FunctionName : 'MyFunctionName' };
 var aws_credentials   = {
@@ -55,9 +55,9 @@ If `FunctionName` do not exist in AWS Lambda console, it will create a new one f
 ```javascript
 
 var gulp              = require('gulp');
-var install           = require('gulp-install);
+var install           = require('gulp-install');
 var zip               = require('gulp-zip');
-var aws_lambda        = require("gulp-aws-lambda");
+var aws_lambda        = require('gulp-aws-lambda');
 
 var lambda_params     = {
     FunctionName      : 'MyFunctionName',
