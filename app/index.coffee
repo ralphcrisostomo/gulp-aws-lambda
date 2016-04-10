@@ -47,6 +47,7 @@ API =
       lambda.createFunction lambda_params, (err, result) ->
         callback err, 404
 
+
   updateFunctionCode : (lambda,lambda_params) ->
     (input, callback) ->
       return callback null, 404 if input is 404
@@ -104,7 +105,7 @@ module.exports = (aws_credentials, lambda_params) ->
       S3ObjectVersion : undefined
       ZipFile         : file.contents
 
-    lambda_params.Code = _.omit lambda_params.Code, ['ZipFile','S3ObjectVersion'] if lambda_params.S3Bucket
+    lambda_params.Code = _.omit lambda_params.Code, ['ZipFile','S3ObjectVersion'] if lambda_params.Code.S3Bucket
 
     API._log(lambda_params.FunctionName,'Starting')
     async.waterfall [
