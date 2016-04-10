@@ -3,9 +3,9 @@
 
 gutil     = require('gulp-util')
 through2  = require('through2')
-aws       = require('aws-sdk')
 async     = require('async')
 _         = require('lodash')
+AWS       = require('aws-sdk')
 
 #
 # Ref : http://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Lambda.html
@@ -85,8 +85,8 @@ API =
 module.exports = (aws_credentials, lambda_params) ->
   through2.obj (file, enc, cb) ->
 
-    s3                  = new aws.S3(aws_credentials)
-    lambda              = new aws.Lambda(aws_credentials)
+    s3                  = new AWS.S3(aws_credentials)
+    lambda              = new AWS.Lambda(aws_credentials)
     lambda_params       = _.defaults lambda_params,
       FunctionName      : ''
       Description       : 'A short, user-defined function description. Assign a meaningful description as you see fit.'

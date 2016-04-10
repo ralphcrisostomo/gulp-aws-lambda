@@ -1,7 +1,7 @@
 {
   "name": "gulp-aws-lambda",
-  "version": "1.0.7",
-  "description": "A starter kit for creating a Gulp plugin",
+  "version": "1.0.8",
+  "description": "A Gulp plugin for AWS Lambda deployment.",
   "main": "dist/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
