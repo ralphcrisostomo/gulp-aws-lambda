@@ -23,13 +23,16 @@ API =
         Bucket : lambda_params.Code.S3Bucket
         Key    : lambda_params.Code.S3Key
         Body   : lambda_params.Code.ZipFile
+      console.log params
       S3.putObject params, (err, result) ->
+        console.log err, result
         callback err, result
 
 
   getFunction : (lambda,lambda_params) ->
     (input, callback) ->
       API._log(lambda_params.FunctionName,'Getting function...')
+
 
       params          =
         FunctionName  : lambda_params.FunctionName
@@ -44,6 +47,7 @@ API =
     (input, callback) ->
       return callback null, input if input isnt 404
       API._log(lambda_params.FunctionName,'Creating function...')
+      lambda_params.Code = _.omit lambda_params.Code, ['ZipFile','S3ObjectVersion'] if lambda_params.Code.S3Bucket
       lambda.createFunction lambda_params, (err, result) ->
         callback err, 404
 
@@ -52,6 +56,7 @@ API =
     (input, callback) ->
       return callback null, 404 if input is 404
       API._log(lambda_params.FunctionName,'Updating function code...')
+      lambda_params.Code = _.omit lambda_params.Code, ['ZipFile','S3ObjectVersion'] if lambda_params.Code.S3Bucket
       params            =
         FunctionName    : lambda_params.FunctionName
         Publish         : lambda_params.Publish
@@ -105,7 +110,6 @@ module.exports = (aws_credentials, lambda_params) ->
       S3ObjectVersion : undefined
       ZipFile         : file.contents
 
-    lambda_params.Code = _.omit lambda_params.Code, ['ZipFile','S3ObjectVersion'] if lambda_params.Code.S3Bucket
 
     API._log(lambda_params.FunctionName,'Starting')
     async.waterfall [
