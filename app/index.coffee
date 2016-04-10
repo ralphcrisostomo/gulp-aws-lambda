@@ -23,9 +23,7 @@ API =
         Bucket : lambda_params.Code.S3Bucket
         Key    : lambda_params.Code.S3Key
         Body   : lambda_params.Code.ZipFile
-      console.log params
       S3.putObject params, (err, result) ->
-        console.log err, result
         callback err, result
 
 
